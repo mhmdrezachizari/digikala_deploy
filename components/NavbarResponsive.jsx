@@ -6,11 +6,16 @@ import Link from 'next/link';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { SlMagnifier } from "react-icons/sl";
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import Router, { useRouter } from 'next/router';
+import { current } from '@reduxjs/toolkit';
 function NavbarResponsive() {
+  const [massage, setmassage] = useState(null)
+   const router = useRouter()
   const serchbox = useRef()
   const handlersub = ()=>{
-    console.log(serchbox.current.value)
+    router.push(`/Searchbox/${serchbox.current.value}`)
+    // setmassage("")
   }
   return (
     <>
@@ -23,15 +28,16 @@ function NavbarResponsive() {
             <Link href="/ShoppingBuy" className={`${styles.navItem} nav-item mx-2`}>سبدخرید</Link>
             <Link href="/SignUp" className={`${styles.navItem} nav-item mx-2`}>ثبت نام</Link>
           </Nav>
-          <Form className="d-flex">
+          <Form className="d-flex align-items-center">
             <Form.Control
               type="search"
               placeholder="جستجو"
               className="me-2"
               aria-label="Search"
               ref={serchbox}
+              value={massage}
             />
-            <Link href={'/'} onClick={handlersub} type='submit' variant="outline-success"><SlMagnifier/></Link>
+           <div className='btn btn-primary' onClick={handlersub}> <SlMagnifier/></div>
           </Form>
           </Navbar.Collapse>
         </Container>
