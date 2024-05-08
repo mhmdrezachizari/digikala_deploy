@@ -1,0 +1,9 @@
+.outainerdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.labelin{
+    margin: 0px 7px;
+}

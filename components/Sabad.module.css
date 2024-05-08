@@ -1,0 +1,14 @@
+.divoutainer{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    gap: 7px;
+    padding-left: 5px;
+}
+.btnin{
+    width: 100%;
+}
+.h5in{
+    font-weight: bold;
+}

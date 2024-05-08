@@ -1,0 +1,11 @@
+.label1{
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background-color: #a10a08;
+    padding: 5px 12px;
+}
+.outainerdv{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

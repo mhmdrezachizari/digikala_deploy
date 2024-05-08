@@ -1,0 +1,27 @@
+.outdiv{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.indiv{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 16px;
+cursor: pointer;
+}
+.indiv:hover{
+    color:#2076cd ;
+    transition: 0.5s;
+}
+.labelInDiv{
+    text-decoration: none !important;
+
+}
+.linkout{
+    text-decoration: none !important;
+}

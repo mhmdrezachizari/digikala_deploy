@@ -1,0 +1,10 @@
+.navbar{
+    direction: rtl;
+}
+.navItem{
+    text-decoration: none;
+    color: aliceblue;
+}
+.navItem:hover{
+    color: #2076cd;
+}
