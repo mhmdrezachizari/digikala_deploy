@@ -8,7 +8,7 @@ const searchboxid = (props) => {
   return (
     <div className='d-flex flex-wrap-wrap'>
     {
-     props.res.length===0 ? <h1>محصولی یافت نشد </h1> : props.res.map(item=><Card product={item}/>)
+     props.res.length===0 ? <h1 className='my-5'>محصولی یافت نشد  🤐</h1> : props.res.map(item=><Card product={item}/>)
     }
     </div>
   )

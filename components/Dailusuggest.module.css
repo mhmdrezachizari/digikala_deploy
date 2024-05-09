@@ -1,0 +1,40 @@
+.divContainer{
+    width: 100%;
+    padding: 40px 0px;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    flex-direction: column;
+}
+.h5dailysuggesst{
+font-weight: bold;
+font-size: 19px;
+}
+.divh5container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    padding: 15px 0px;
+    background: linear-gradient(90deg, rgba(54,41,36,1) 0%, rgba(191,115,150,1) 51%, rgba(39,67,117,1) 100%, rgba(234,235,161,1) 100%, rgba(29,59,118,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+.divcardcontainer{
+display: flex;
+justify-content: flex-start;
+align-items: center;
+flex-wrap: wrap;
+width: 100%;
+}
+.labeletc{
+    margin-right: 20px;
+    border: 1px solid transparent;
+   background-color: antiquewhite;
+    padding: 20px 20px;
+    border-radius: 270px;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    
+}

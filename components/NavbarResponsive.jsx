@@ -8,7 +8,6 @@ import Button from 'react-bootstrap/Button';
 import { SlMagnifier } from "react-icons/sl";
 import { useRef, useState } from 'react';
 import Router, { useRouter } from 'next/router';
-import { current } from '@reduxjs/toolkit';
 function NavbarResponsive() {
   const [massage, setmassage] = useState(null)
    const router = useRouter()
@@ -21,9 +20,8 @@ function NavbarResponsive() {
     <>
       <Navbar sticky="top" className={styles.navbar} bg="dark" data-bs-theme="dark">
         <Container>
-        <Navbar.Collapse id="navbarScroll">
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto" style={{ maxHeight: '100px' }}>
-          <Link href="/" className={`${styles.navItem} nav-item `}>دیجی</Link>
             <Link href="/Products" className={`${styles.navItem} nav-item mx-2`}>محصولات</Link>
             <Link href="/ShoppingBuy" className={`${styles.navItem} nav-item mx-2`}>سبدخرید</Link>
             <Link href="/SignUp" className={`${styles.navItem} nav-item mx-2`}>ثبت نام</Link>
