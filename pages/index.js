@@ -1,9 +1,7 @@
-
 import Dailusuggest from "@/components/Dailusuggest";
 import MainSlider from "@/components/MainSlider";
 import SevenIcons from "@/components/SevenIcons";
 import DataBanner from "@/components/dataBanner";
-import styles from "@/styles/Home.module.css";
 import { Inter } from "next/font/google";
 import { useId } from "react";
 
@@ -13,12 +11,13 @@ export default function Home(props) {
   const id1 = useId()
   const id2 = useId()
   const id3 = useId()
+  const id4 = useId()
   return (
     <>
       <MainSlider key={id1} mainSlider={props.mainSlider} />
       <SevenIcons key={id2} date={props.seveniconsdate} />
       <Dailusuggest key={id3} date={props.daily}/>
-      <DataBanner/>
+      <DataBanner key={id4}/>
     
     </>
   );
