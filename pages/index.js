@@ -1,7 +1,7 @@
 import Dailusuggest from "@/components/Dailusuggest";
 import MainSlider from "@/components/MainSlider";
 import SevenIcons from "@/components/SevenIcons";
-import DataBanner from "@/components/dataBanner";
+import DataBanner from "@/components/DataBanner";
 import { Inter } from "next/font/google";
 import { useId } from "react";
 
