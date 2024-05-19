@@ -5,6 +5,7 @@
     flex-direction: row;
     margin-top: 20px;
     flex-wrap: wrap;
+    margin-bottom: 2rem;
 }
 .indiv{
 display: flex;

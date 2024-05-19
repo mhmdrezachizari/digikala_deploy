@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Styles from "./FooterResponsive.module.css";
 const FooterResponsive = () => (
-  <footer className="page-footer font-small blue pt-4 bg-dark mt-4">
+  <footer className={`${Styles.divout} page-footer font-small blue pt-4 bg-dark mt-4`}>
     <div className="container-fluid text-center text-md-left">
       <div className="row">
         <hr className="clearfix w-100 d-md-none pb-0" />

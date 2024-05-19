@@ -4,33 +4,41 @@ import * as Yup from "yup";
 import MyFormErrorComponent from "./MyFormErrorComponent";
 import styles from "./Myform.module.css";
 import { useRouter } from "next/router";
-import Toast from 'react-bootstrap/Toast';
+import Modal from "./Modal";
+import Spinner from "./Spinner";
 
 
 
 const MyForm = () => {
   const [nameUser, setnameUser] = useState('')
+  const [spinner, setspinner] = useState(false)
   const router = useRouter();
-  const [massage1, setmassage1] = useState();
   const [flag, setflag] = useState(false);
+  const [errorHnadle , setErrorHandle] = useState(false)
   const singup = (values) => {
-    fetch("https://6612ae9c53b0d5d80f6628ce.mockapi.io/api/project1/Login", {
+    fetch("http://80.75.14.90:9090/users/register", {
       method: "post",
       body: JSON.stringify({
         username: values.name,
-        lastname: values.lastname,
-        password: values.password,
-        email: values.email,
+        password: values.password
       }),
       headers: { "content-type": "application/json" },
     })
       .then((response) => {
-        return response.json();
+       if (response.status===200){
+        setflag(true);
+        setErrorHandle(true)
+        setspinner(false)
+       }
+       else{
+        router.push(`/LoginCng/${values.name}`)
+       }
       })
-      .then((receivedData) => {
-        console.log(receivedData);
-      });
+      // .then((receivedData) => {
+      //   console.log(receivedData.json())
+      // });
   };
+  // console.log(singup())
   const formFields = {
     name: "",
     lastname: "",
@@ -38,10 +46,11 @@ const MyForm = () => {
     password: "",
   };
   const submitHandler = (values) => {
+    setspinner(true)
     singup(values);
     console.log(values)
-    setmassage1("");
-    setflag(true);
+
+
     setnameUser(values.lastname)
   };
 
@@ -49,7 +58,6 @@ const MyForm = () => {
     name: Yup.string().required("enter name please"),
     lastname: Yup.string().required("enter lastname please"),
     email: Yup.string()
-      .required()
       .email("your email is not correct")
       .nullable(),
     password: Yup.string().required("enter password please"),
@@ -60,69 +68,67 @@ const MyForm = () => {
   });
   return (
     <div>
-      <Formik
-        validateOnBlur={false}
-        validateOnChange={true}
-        onSubmit={submitHandler}
-        initialValues={formFields}
-        validationSchema={validationSchema}
-      >
-        <Form className="container">
-          <div className={styles.div1}>
-            <div className={styles.divdakhel}>
-              <label className={`${styles.c123} my-2`}>نام</label>
-              <Field
-                type="text"
-                name="name"
-                className="form-control"
-                value={massage1}
-              />
-              <ErrorMessage name="name" component={MyFormErrorComponent} />
-            </div>
-            <div className={styles.divdakhel}>
-              <label className={`${styles.c123} my-2`}>نام خانوادگی</label>
-              <Field
-                type="text"
-                name="lastname"
-                className="form-control"
-                value={massage1}
-              />
-              <ErrorMessage name="lastname" component={MyFormErrorComponent} />
-            </div>
-            <div className={styles.divdakhel}>
-              <label className={`${styles.c123} my-2`}>ایمیل</label>
-              <Field
-                type="text"
-                name="email"
-                className="form-control"
-                value={massage1}
-              />
-              <ErrorMessage name="email" component={MyFormErrorComponent} />
-            </div>
-            <div className={styles.divdakhel}>
-              <label className={`${styles.c123} my-2`}>رمز</label>
-              <Field
-                type="password"
-                name="password"
-                className="form-control"
-                value={massage1}
-              />
-              <ErrorMessage name="password" component={MyFormErrorComponent} />
-            </div>
-            <button className="btn btn-primary mt-3" type="submit">
-              signUp
-            </button>
-          </div>
-        </Form>
-      </Formik>
-      <Toast autohide={true} onClose={()=>setflag(!flag)} delay={5000} animation={true} show={flag} bg="danger">
-      <Toast.Header>
-        <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
-        <strong className="me-auto">خوش آمدید</strong>
-      </Toast.Header>
-      <Toast.Body>ثبت نام شما با موفقیت انجام شد اقای {nameUser}</Toast.Body>
-    </Toast>
+        {
+          spinner === true ? <Spinner/>:     <div>
+          <Formik
+            validateOnBlur={false}
+            validateOnChange={true}
+            onSubmit={submitHandler}
+            initialValues={formFields}
+            validationSchema={validationSchema}
+          >
+            <Form className="container">
+              <div className={styles.div1}>
+                <div className={styles.divdakhel}>
+                  <label className={`${styles.c123} my-2`}>نام</label>
+                  <Field
+                    type="text"
+                    name="name"
+                    className="form-control"
+                  />
+                  <ErrorMessage name="name" component={MyFormErrorComponent} />
+                </div>
+                <div className={styles.divdakhel}>
+                  <label className={`${styles.c123} my-2`}>نام خانوادگی</label>
+                  <Field
+                    type="text"
+                    name="lastname"
+                    className="form-control"
+                  />
+                  <ErrorMessage name="lastname" component={MyFormErrorComponent} />
+                </div>
+                <div className={styles.divdakhel}>
+                  <label className={`${styles.c123} my-2`}>ایمیل</label>
+                  <Field
+                    type="text"
+                    name="email"
+                    className="form-control"
+                  />
+                  <ErrorMessage name="email" component={MyFormErrorComponent} />
+                </div>
+                <div className={styles.divdakhel}>
+                  <label className={`${styles.c123} my-2`}>رمز</label>
+                  <Field
+                    type="password"
+                    name="password"
+                    className="form-control"
+                  />
+                  <ErrorMessage name="password" component={MyFormErrorComponent} />
+                </div>
+                <button className="btn btn-primary mt-3" type="submit">
+                  signUp
+                </button>
+              </div>
+            </Form>
+          </Formik>
+          {
+            errorHnadle === true ? <Modal error={"نام کاربردی شما قبلا ثبت شده است"} flag={flag} setflag={()=>setflag((!flag))} />:null
+          }
+              </div>
+        }
+
     </div>
+    
   );
 };
 

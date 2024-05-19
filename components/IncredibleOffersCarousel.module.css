@@ -1,0 +1,19 @@
+.outerContainer {
+    background-color: rgb(181, 2, 2);
+    display: flex;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.imageContainer {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+}
+
+.carouselContainer {
+    width: 90%;
+}

@@ -6,3 +6,9 @@
 .navItem:hover{
     color: #2076cd !important;
 }
+.divout{
+    position: absolute;
+    left: 0;
+    bottom: -299px;
+    width: 100%;
+}
