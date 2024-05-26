@@ -25,6 +25,7 @@ function NavbarResponsive() {
             <Link href="/Products" className={`${styles.navItem} nav-item mx-2`}>محصولات</Link>
             <Link href="/ShoppingBuy" className={`${styles.navItem} nav-item mx-2`}>سبدخرید</Link>
             <Link href="/SignUp" className={`${styles.navItem} nav-item mx-2`}>ثبت نام</Link>
+            <Link href="/Login" className={`${styles.navItem} nav-item mx-2`}> ورود</Link>
           </Nav>
           <Form className="d-flex align-items-center">
             <Form.Control

@@ -35,6 +35,9 @@ function ResponNavbar() {
             <Link href="/SignUp" className={`${styles.navItem} nav-item mx-2`}>
               ثبت نام
             </Link>
+            <Link href="/Login" className={`${styles.navItem} nav-item mx-2`}>
+               ورود
+            </Link>
             <Link
               href="/Products"
               className={`${styles.navItem} nav-item mx-2`}

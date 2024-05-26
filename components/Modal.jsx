@@ -1,7 +1,6 @@
 import React from 'react'
 import Toast from 'react-bootstrap/Toast';
 const Modal = (props) => {
-    console.log(props.flag)
   return (
     <div>
        <Toast autohide={true} onClose={()=>props.setflag(!props.flag)} delay={5000} animation={true} show={props.flag} bg="danger">

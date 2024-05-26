@@ -1,9 +1,10 @@
+import MyformLogin from '@/components/myformLogin'
 import React from 'react'
 
 const Login = () => {
   return (
     <div>
-      Login
+      <MyformLogin/>
     </div>
   )
 }

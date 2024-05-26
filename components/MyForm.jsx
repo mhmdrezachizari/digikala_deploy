@@ -34,11 +34,7 @@ const MyForm = () => {
         router.push(`/LoginCng/${values.name}`)
        }
       })
-      // .then((receivedData) => {
-      //   console.log(receivedData.json())
-      // });
   };
-  // console.log(singup())
   const formFields = {
     name: "",
     lastname: "",
