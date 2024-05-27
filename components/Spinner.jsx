@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { RotatingLines } from 'react-loader-spinner'
 
 const Spinner = () => {
@@ -19,4 +19,4 @@ const Spinner = () => {
   )
 }
 
-export default Spinner
+export default memo(Spinner )

@@ -5,6 +5,7 @@ import DataBanner from "@/components/DataBanner";
 import { Inter } from "next/font/google";
 import { useId } from "react";
 import IncredibleOffersCarousel from "@/components/IncredibleOffersCarousel";
+import TopBanner2 from "@/components/TopBanner2";
 
 const inter = Inter({ subsets: ["latin"] });
 

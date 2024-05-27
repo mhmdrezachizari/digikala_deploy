@@ -7,5 +7,6 @@ const databanner = [
     {id:5 ,url:"https://www.digikala.com/statics/img/svg/footer/jet.svg"},
     {id:6 ,url:"https://www.digikala.com/statics/img/svg/footer/magnet.svg"},
     {id:7 ,url:"https://www.digikala.com/statics/img/svg/footer/digiMehr.svg"},
+    {id:8 ,url:"https://www.digikala.com/statics/img/svg/footer/digiMehr.svg"},
 ]
 export default databanner

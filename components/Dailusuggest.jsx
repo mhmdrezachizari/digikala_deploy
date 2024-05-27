@@ -12,11 +12,11 @@ const Dailusuggest = (props) => {
       <div className={style.divh5container}><h5 className={style.h5dailysuggesst}>پیشنهاد روزانه </h5></div> 
       <div className={style.divcardcontainer}>
       {
-            flag === true ? props.date.map(item=><Card product={item}/>) : 
+            flag === true ? props.date.map(item=><Card key={item.id} product={item}/>) : 
         
             props.date.map(item=>{
                 if(item.id <= 4){
-                    return <Card product={item}/>
+                    return <Card key={item.id} product={item}/>
                 }
             })
         }

@@ -10,7 +10,6 @@ const AfterClickButton = (props) => {
     const data = useSelector(state=>state.shoppingcard)
     const afterdata = data.items.filter(item=>item.id === props.prd)[0].count
     const dispatch = useDispatch()
-    console.log(afterdata)
     const incresehandler =(id)=>{
         dispatch(increaseitem(id))
     }

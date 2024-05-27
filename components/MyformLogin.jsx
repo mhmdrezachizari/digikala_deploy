@@ -28,7 +28,6 @@ const MyformLogin = () => {
           router.push(`/Dashboard/${values.username}`);
         } 
         else {
-          console.log(response)
           setspinner(false);
           setflag(true);
           seterrorHandle(true)
@@ -42,7 +41,6 @@ const MyformLogin = () => {
   };
   const submitHandler = (values) => {
     setspinner(true);
-    console.log(values);
     singup(values);
   };
 

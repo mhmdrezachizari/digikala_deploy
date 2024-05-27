@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./TopBanner.module.css";
 import Link from "next/link";
@@ -22,4 +22,4 @@ const TopBanner = () => {
   );
 };
 
-export default TopBanner;
+export default memo(TopBanner) ;

@@ -9,13 +9,14 @@ const SevenIcons = (props) => {
       <div className={Styles.outdiv}>
         {props.date.map((item) => {
           return (
-            <div className={Styles.indiv}>
-                <Link href={`/sevenicons/cat/${item.url}`} className={Styles.linkout}>
+            <div key={item.id} className={Styles.indiv}>
+                <Link key={item.id} href={`/sevenicons/cat/${item.url}`} className={Styles.linkout}>
                 <Image
                   src={`/images/${item.iconName}`}
                   height={60}
                   width={60}
                   alt={item.label}
+                  key={item.id}
                 />
             </Link>
                 <label className='text-decoration-none'>{item.label}</label>

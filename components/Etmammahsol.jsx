@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import styles from './Etmammahsol.module.css'
 const Etmammahsol = () => {
   return (
@@ -8,4 +8,4 @@ const Etmammahsol = () => {
   )
 }
 
-export default Etmammahsol
+export default memo(Etmammahsol)

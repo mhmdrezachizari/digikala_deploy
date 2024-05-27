@@ -44,9 +44,6 @@ const MyForm = () => {
   const submitHandler = (values) => {
     setspinner(true)
     singup(values);
-    console.log(values)
-
-
     setnameUser(values.lastname)
   };
 

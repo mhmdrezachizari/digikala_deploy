@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Link from "next/link";
 import Styles from "./FooterResponsive.module.css";
 const FooterResponsive = () => (
@@ -77,4 +77,4 @@ const FooterResponsive = () => (
     </div>
   </footer>
 );
-export default FooterResponsive;
+export default memo(FooterResponsive);

@@ -9,7 +9,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 import { SlMagnifier } from "react-icons/sl";
+import { useSelector } from "react-redux";
 function ResponNavbar() {
+  const data= useSelector(state=>state.shoppingcard)
   const [massage, setmassage] = useState();
   const router = useRouter();
   const serchbox = useRef();
@@ -50,6 +52,7 @@ function ResponNavbar() {
             >
               سبدخرید
             </Link>
+          <label className="text-danger">{data.totalCount}</label>
           </Nav>
           <Form className="d-flex align-items-center">
             <input
